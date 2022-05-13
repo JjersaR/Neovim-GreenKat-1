@@ -26,8 +26,6 @@ Carpeta de los plugins
 • plugins
 
 Carpeta de configuracion y atajos
-require('settings')
-require('keymaps')
  • settings
  • keymaps
 
