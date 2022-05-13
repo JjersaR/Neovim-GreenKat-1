@@ -12,49 +12,65 @@ cuado todo lo hayan solucionado dentro de la carpeta de nevim/lua ahi encontrara
 podran agregar mas plugins y ver la lsita q mas abajo le dejo lo que contiene, en keymaps y whichkeys-config es para ver la 
 configuracion de las teclas para realizar las acciones.
 
-le dejo lo que contiene este nvim
+Les dejo lo que contiene este nvim
 
--- los plugins
-require('plugins')
+Las carpetas que contiene los archivos de configuracion estan dentro de lua, en la pagina principal en el archivo de init.lua esta
+todo lo que contiene y esas hacen referencia a los archivos dentro de la carpeta antes mencionada lua.
 
--- configuracion y atajos
+Carpeta de los plugins
+• plugins
+
+Carpeta de configuracion y atajos
 require('settings')
 require('keymaps')
+ • settings
+ • keymaps
 
--- conf de los plugins
-require('staline-config')
-require('treesitter-config')
-require('bufferline-config')
-require('tree-config')
-require('telescope-config')
-require('cmp-config')
-require('lsp-config')
-require('lenguajes')
-require('lspsaga-config')
-require('autopairs-config')
-require('whichkeys-config')
-require('toggleterm-config')
-require('blankline-config')
-require('gitsigns-config')
-require('dashboard-config')
-require('rnvimr-config')
-require('trouble-config')
-require('nulls-ls-config')
-require('reach-config')
-require('comment-config')
-require('rename-config')
-require('hop-vim')
-require('refactoring-nvim')
-require('nvim-spectre')
-require('gitsigns.nvim')
-require('project-nvim')
-
-
---moon
---vim.cmd[[colorscheme blue-moon]]
-
---catppuccin
---vim.cmd[[colorscheme catppuccin]]
-
---tokyonight
-vim.cmd[[colorscheme tokyonight]]
+Plugins que contiene
+ • animate.vim
+ • bufferline.nvim
+ • cmp-buffer
+ • cmp-nvim-lsp
+ • cmp-vsnip
+ • dashboard-nvim
+ • gitsigns.nvim
+ • hop.nvim
+ • indent-blankline.nvim
+ • lens.vim
+ • lspkind-nvim
+ • lspsaga.nvim
+ • neoscroll.nvim
+ • null-ls.nvim
+ • nvim-autopairs
+ • nvim-cmp
+ • nvim-comment
+ • nvim-jdtls
+ • nvim-lsp-installer
+ • nvim-lspconfig
+ • nvim-spectre
+ • nvim-tree.lua
+ • nvim-treesitter
+ • nvim-web-devicons
+ • plenary.nvim
+ • reach.nvim
+ • refactoring.nvim
+ • renamer.nvim
+ • rest.nvim
+ • rnvimr
+ • staline.nvim
+ • symbols-outline.nvim
+ • telescope.nvim
+ • toggleterm.nvim
+ • tokyodark.nvim
+ • tokyonight.nvim
+ • vim-vsnip
+ • which-key.nvim
+ 
+     Temas
+ • catppuccin
+ • neon
+ • nightfox.nvim
+ • nord.nvim
+ • tokyodark.nvim
+ • tokyonight.nvim
+ • blue-moon
