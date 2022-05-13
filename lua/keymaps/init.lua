@@ -132,3 +132,8 @@ mapper('n', 'hi', ':Gitsigns select_hunk<CR>')
 --mapper('n', '<leader>tb', gs.toggle_current_line_blame)
 --mapper('n', '<leader>hD', function() gs.diffthis('~') end)
 --mapper('n', '<leader>td', gs.toggle_deleted)
+
+-- Rest-nvim
+--<Plug>RestNvim, run the request under the cursor
+--<Plug>RestNvimPreview, preview the request cURL command
+--<Plug>RestNvimLast, re-run the last request

@@ -138,6 +138,14 @@ return require('packer').startup(function()
         'lewis6991/gitsigns.nvim',
         config = function() require('gitsigns').setup() end
     }
+    
+    --rest-nvim
+    use ({
+	  "NTBBloodbath/rest.nvim",
+	  requires = { "nvim-lua/plenary.nvim" },
+	 })
+
+
 
     --Minimap
 --    use {

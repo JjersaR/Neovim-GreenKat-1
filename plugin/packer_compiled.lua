@@ -236,6 +236,11 @@ _G.packer_plugins = {
     path = "/home/maggie/.local/share/nvim/site/pack/packer/start/renamer.nvim",
     url = "https://github.com/filipdutescu/renamer.nvim"
   },
+  ["rest.nvim"] = {
+    loaded = true,
+    path = "/home/maggie/.local/share/nvim/site/pack/packer/start/rest.nvim",
+    url = "https://github.com/NTBBloodbath/rest.nvim"
+  },
   rnvimr = {
     loaded = true,
     path = "/home/maggie/.local/share/nvim/site/pack/packer/start/rnvimr",
