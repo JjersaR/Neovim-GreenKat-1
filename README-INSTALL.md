@@ -1,8 +1,13 @@
 # Neovim-GreenKat
 Este es una configuracion ya esta bastante trabajada espero les guste, a mi me encanto xD...
-Este tarbajo fue echo por Ricardo Sanchez yo solo agrege pocas cosas a si q el agredicimiento a el y ak les dejo su git
+Este tarbajo fue echo por Ricardo Sanchez yo solo agrege pocas cosas a si q el agredicimiento a el y ak les dejo su git,
+otra persona que me ha ayudado es mi amigo Charly Ramirez el es senior en desarrollo, el me ha ayudado a resolver algunos 
+muchos problemas que me surgieron xD, me ha apoyado en mi camino de Desarrollo, les dejo su github el de ambos, 
+en verdad muchas gracias a ambos.
 
-https://github.com/JjersaR
+https://github.com/JjersaR   -- git de Ricardo Sanchez
+
+https://github.com/CharlyEstudio  -- git de Charly Ramirez
 
 Si lo quiren instalar en linux solo tiene que poner la carpeta dentro de su home y .config y pegar la carpeta luego bajar
 Packer lua en google y clonar solo lo que pide, ya luego entrar a neovim y poner :PackerSync y luego :PackerUpdate
