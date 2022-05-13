@@ -23,7 +23,7 @@ Las carpetas que contiene los archivos de configuracion estan dentro de lua, en 
 todo lo que contiene y esas hacen referencia a los archivos dentro de la carpeta antes mencionada lua.
 
 Carpeta de los plugins
-• plugins
+ • plugins
 
 Carpeta de configuracion y atajos
  • settings
