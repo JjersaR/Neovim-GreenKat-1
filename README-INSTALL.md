@@ -30,6 +30,7 @@ Carpeta de configuracion y atajos
  • keymaps
 
 Plugins que contiene
+ • DAPInstall.nvim
  • animate.vim
  • bufferline.nvim
  • cmp-buffer
@@ -47,6 +48,7 @@ Plugins que contiene
  • nvim-autopairs
  • nvim-cmp
  • nvim-comment
+ • nvim-dap
  • nvim-jdtls
  • nvim-lsp-installer
  • nvim-lspconfig
@@ -64,8 +66,7 @@ Plugins que contiene
  • symbols-outline.nvim
  • telescope.nvim
  • toggleterm.nvim
- • tokyodark.nvim
- • tokyonight.nvim
+ • vim-maximizer
  • vim-vsnip
  • which-key.nvim
  

@@ -30,10 +30,10 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
   buf_set_keymap('n', '<space>lf', ':lua vim.lsp.buf.formatting()<CR>', opts)
   -- Set some keybinds conditional on server capabilities
-  if client.server_capabilities.document_formatting then
+  if client.resolved_capabilities.document_formatting then
       buf_set_keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
   end
-  if client.server_capabilities.document_range_formatting then
+  if client.resolved_capabilities.document_range_formatting then
       buf_set_keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
   end
 end

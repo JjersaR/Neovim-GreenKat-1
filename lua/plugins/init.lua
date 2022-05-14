@@ -17,11 +17,11 @@ return require('packer').startup(function()
     --tema nightfox
     use "EdenEast/nightfox.nvim"
 
-    -- la linea de abajo
-    use {
-        use 'tamton-aquib/staline.nvim',
-        requires = {'kyazdani42/nvim-web-devicons', opt = true}
-    }
+    -- la linea de abajo Staline
+    --use {
+        use 'tamton-aquib/staline.nvim'--,
+    --    requires = {'kyazdani42/nvim-web-devicons', opt = true}
+    --}
 
     -- la sintaxis
     use {'nvim-treesitter/nvim-treesitter', run = ":TSUpdate"}
@@ -97,7 +97,7 @@ return require('packer').startup(function()
     -- indentado
     use "lukas-reineke/indent-blankline.nvim"
 
-    -- ver qué se modificó
+    -- gitsigns.nvim
     use {
         'lewis6991/gitsigns.nvim',
         requires = {'nvim-lua/plenary.nvim'},
@@ -134,17 +134,21 @@ return require('packer').startup(function()
     use 'camspiers/lens.vim'
 
     -- gitsigns.nvim
-    use {
-        'lewis6991/gitsigns.nvim',
-        config = function() require('gitsigns').setup() end
-    }
+    --use {
+    --    'lewis6991/gitsigns.nvim',
+    --    config = function() require('gitsigns').setup() end
+    --}
     
     --rest-nvim
     use ({
 	  "NTBBloodbath/rest.nvim",
 	  requires = { "nvim-lua/plenary.nvim" },
 	 })
-
+	 
+    --Debuger nvim-dap
+    use 'mfussenegger/nvim-dap'
+    use 'Pocco81/DAPInstall.nvim'
+    use 'szw/vim-maximizer'
 
 
     --Minimap
