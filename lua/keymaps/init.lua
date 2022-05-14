@@ -7,6 +7,7 @@ map('n', '<C-l>', '<C-w>l', {noremap = true, silent = false})
 map('n', '<C-j>', '<C-w>j', {noremap = true, silent = false})
 map('n', '<C-k>', '<C-w>k', {noremap = true, silent = false})
 
+
 --Función para mapear las cosas
 local mapper = function(mode, key, result)
 	vim.api.nvim_set_keymap(mode, key, result, {noremap = true, silent = true})
@@ -66,9 +67,10 @@ mapper("n", "<leader>rc", ":lua require('refactoring').debug.cleanup({})<CR>")
 --atajos personalizados
 mapper("i","jj", "<Esc><Esc>")
 mapper("i","<C-s>", "<Esc><Esc>:w<CR>")
-mapper("n","<Leader>q", ":q<CR>")
-mapper("n","<Leader>wq", ":wq<CR>")
-mapper("n","<Leader>qq", ":q!<CR>")
+mapper("n","<C-q>", ":q<CR>")
+mapper("n","<C-w>", ":w<CR>")
+mapper("n","<C-wq>", ":wq<CR>")
+mapper("n","<C-qq>", ":q!<CR>")
 mapper("n","0", "^")
 mapper("n","Y", "y$")
 
@@ -107,18 +109,18 @@ mapper("n", "rt", ":RnvimrToggle<CR>")
 mapper("n", "<Leader>so", ":SymbolsOutline<CR>")
 
 --Comando de ejecución Spectre: Spectre
---Reemplazo
+--Reemplazo general en tu proyecto
 mapper('n', '<leader>c', "<cmd>lua require('spectre').open()<CR>")
 --Buscar en el archivo actual
-mapper('n', '<leader>cp', "<cmd>lua require('spectre').open_file_search()<CR>")
+mapper('n', '<leader>ca', "<cmd>lua require('spectre').open_file_search()<CR>")
 --Buscar palabra actual
---mapper('v', '<leader>cw', "<cmd>lua require('spectre').open_visual({select_word=true})<CR>")
---mapper('v', '<leader>ce', "<cmd>lua require('spectre').open_visual()<CR>")
+--mapper('n', '<leader>cp', "<cmd>lua require('spectre').open_visual({select_word=true})<CR>")
+--mapper('v', '<leader>cw', "<cmd>lua require('spectre').open_visual()<CR>")
 
 -- gitsigns.nvim Decoraciones git súper rápidas implementadas puramente en lua/teal.
 -- Actions
-mapper('n', 'v', 'hs', ':Gitsigns stage_hunk<CR>')
-mapper('n', 'v', 'hr', ':Gitsigns reset_hunk<CR>')
+mapper('n', 'hs', ':Gitsigns stage_hunk<CR>')
+mapper('n', 'hr', ':Gitsigns reset_hunk<CR>')
 mapper('n', 'hd', ':Gitsigns diffthis<CR>')
 mapper('n', 'hx', ':Gitsigns next_hunk<CR>')
 mapper('n', 'hp', ':Gitsigns prev_hunk<CR>')

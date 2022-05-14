@@ -18,10 +18,7 @@ return require('packer').startup(function()
     use "EdenEast/nightfox.nvim"
 
     -- la linea de abajo Staline
-    --use {
-        use 'tamton-aquib/staline.nvim'--,
-    --    requires = {'kyazdani42/nvim-web-devicons', opt = true}
-    --}
+    use 'tamton-aquib/staline.nvim'
 
     -- la sintaxis
     use {'nvim-treesitter/nvim-treesitter', run = ":TSUpdate"}
@@ -74,6 +71,19 @@ return require('packer').startup(function()
             {"nvim-lua/plenary.nvim"}, {"nvim-treesitter/nvim-treesitter"}
         }
     }
+	
+	-- problemas
+    use {
+        "folke/trouble.nvim",
+        requires = "kyazdani42/nvim-web-devicons",
+        config = function()
+            require("trouble").setup {
+                -- your configuration comes here
+                -- or leave it empty to use the default settings
+                -- refer to the configuration section below
+            }
+        end
+    }
 
     -- Spectre
     use 'windwp/nvim-spectre'
@@ -97,7 +107,7 @@ return require('packer').startup(function()
     -- indentado
     use "lukas-reineke/indent-blankline.nvim"
 
-    -- gitsigns.nvim
+    -- gitsigns-nvim
     use {
         'lewis6991/gitsigns.nvim',
         requires = {'nvim-lua/plenary.nvim'},
@@ -132,12 +142,6 @@ return require('packer').startup(function()
     -- lens
     use 'camspiers/animate.vim'
     use 'camspiers/lens.vim'
-
-    -- gitsigns.nvim
-    --use {
-    --    'lewis6991/gitsigns.nvim',
-    --    config = function() require('gitsigns').setup() end
-    --}
     
     --rest-nvim
     use ({
