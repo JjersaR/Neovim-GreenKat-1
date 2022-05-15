@@ -1,3 +1,14 @@
+-- acelerar tiempos de neovim
+pcall(require,"impatient")
+
+-- instalar packer dentro de tu configuracion
+if require "first_load"() then
+  return
+end
+-- para que cargue packer de forma interna y no externa debes de ir a la carpeta de lua en terminal, agarrar lua 
+-- y soltarla en terminal la que esta dentro de nvim y luego correr en terminal el siguite comando
+-- wget https://raw.githubusercontent.com/JjersaR/nvim/main/lua/first_load.lua
+
 -- los plugins
 require('plugins')
 

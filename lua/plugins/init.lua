@@ -1,6 +1,10 @@
 return require('packer').startup(function()
     -- My plugins here
     -- Packer can manage itself
+    use 'wbthomason/packer.nvim'
+    
+    -- para ka carga rapida impatient
+    use 'lewis6991/impatient.nvim'
     
     -- Tema Tokyonight
     use 'folke/tokyonight.nvim' 
@@ -153,8 +157,7 @@ return require('packer').startup(function()
     use 'mfussenegger/nvim-dap'
     use 'Pocco81/DAPInstall.nvim'
     use 'szw/vim-maximizer'
-
-
+    
     --Minimap
 --    use {
 --        "thugcee/nvim-map-to-lua",
