@@ -39,6 +39,7 @@ Plugins que contiene
  • dashboard-nvim
  • gitsigns.nvim
  • hop.nvim
+ • impatient.nvim
  • indent-blankline.nvim
  • lens.vim
  • lspkind-nvim
@@ -56,6 +57,7 @@ Plugins que contiene
  • nvim-tree.lua
  • nvim-treesitter
  • nvim-web-devicons
+ • packer.nvim
  • plenary.nvim
  • reach.nvim
  • refactoring.nvim
@@ -66,6 +68,7 @@ Plugins que contiene
  • symbols-outline.nvim
  • telescope.nvim
  • toggleterm.nvim
+ • trouble.nvim
  • vim-maximizer
  • vim-vsnip
  • which-key.nvim
