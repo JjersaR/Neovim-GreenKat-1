@@ -40,6 +40,7 @@ require('hop-vim')-- buscar palabras o moverte a lineas
 require('nvim-spectre')-- reemplaza en masa la palabra en todos tus arhcivos del proyecto*
 require('Nvim-web-devicons')-- iconons 
 require('tree-config')-- navegador de paquetes
+require('transparent-config')-- transparente
 --require('refactoring-nvim')-- refactoriza o cambia de nombre de una variable o x cosa en todos tus archivos
 --require('rest-nvim')-- para postman 
 --require('nvim-dap')-- debuger

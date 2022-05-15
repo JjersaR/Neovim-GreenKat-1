@@ -162,6 +162,9 @@ return require('packer').startup(function()
     use 'camspiers/animate.vim'
     use 'camspiers/lens.vim'
     
+    -- transparente
+    use 'xiyaowong/nvim-transparent'
+    
     --rest-nvim
 --    use ({
 --	  "NTBBloodbath/rest.nvim",
