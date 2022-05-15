@@ -33,7 +33,7 @@ staline.setup {
     mod_symbol = "  ", -- modified symbol
     bg = "#202328",
     branch_symbol = " ",
-    line_column = "[%l:%c] 並%p%% ",
+    line_column = " [%l/%L] 並%p%% ",
   },
   mode_icons = {
     ['n'] = ' ',
