@@ -16,13 +16,14 @@ local my_colors = {n = "#9CCFD8", i = "#9CCFD8", c = "#9CCFD8", v = "#9CCFD8", t
 staline.setup {
   sections = {
     left = {
-             'mode', {'StalineBranch', 'file_name', 'branch'},percentage,' ', { 'Evil', ' ' }, ' ',
+             'mode', {'StalineBranch', 'file_name', 'branch'},percentage, { 'Evil', ' ' }, ' ',
            },
     mid = {'lsp_name'},
   right = {
 		{ 'StalineEnc', vim.bo.fileencoding:upper() }, '  ',  -- Example for custom section
-		{ 'StalineEnc', 'cool_symbol' }, ' ',                 -- the cool_symbol for your OS
-		{ 'StalineGit', 'branch' }, ' ', percentage                  -- Branch Name in different highlight
+		{ 'StalineEnc', 'cool_symbol'},                 -- the cool_symbol for your OS
+		{'right_sep_double', 'line_column', 'left_sep_double'},
+		{ 'StalineGit', 'branch' }, percentage                  -- Branch Name in different highlight
 	  }
      },
   defaults = {
@@ -31,7 +32,8 @@ staline.setup {
     branch_symbol = " ", -- branch symbol
     mod_symbol = "  ", -- modified symbol
     bg = "#202328",
-    branch_symbol = " "
+    branch_symbol = " ",
+    line_column = "[%l:%c] 並%p%% ",
   },
   mode_icons = {
     ['n'] = ' ',
