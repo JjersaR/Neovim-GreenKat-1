@@ -84,25 +84,25 @@ return require('packer').startup(function()
     }
 
     -- para refactoring
-    use {
-        "ThePrimeagen/refactoring.nvim",
-        requires = {
-            {"nvim-lua/plenary.nvim"}, {"nvim-treesitter/nvim-treesitter"}
-        }
-    }
-	
+--    use {
+--        "ThePrimeagen/refactoring.nvim",
+--        requires = {
+--            {"nvim-lua/plenary.nvim"}, {"nvim-treesitter/nvim-treesitter"}
+--        }
+--    }
+--	
 	-- problemas
-    use {
-        "folke/trouble.nvim",
-        requires = "kyazdani42/nvim-web-devicons",
-        config = function()
-            require("trouble").setup {
-                -- your configuration comes here
-                -- or leave it empty to use the default settings
-                -- refer to the configuration section below
-            }
-        end
-    }
+    --use {
+    --    "folke/trouble.nvim",
+    --    requires = "kyazdani42/nvim-web-devicons",
+    --    config = function()
+    --        require("trouble").setup {
+    --            -- your configuration comes here
+    --            -- or leave it empty to use the default settings
+    --            -- refer to the configuration section below
+    --       }
+    --    end
+    --}
 
     -- Spectre
     use 'windwp/nvim-spectre'
@@ -163,15 +163,15 @@ return require('packer').startup(function()
     use 'camspiers/lens.vim'
     
     --rest-nvim
-    use ({
-	  "NTBBloodbath/rest.nvim",
-	  requires = { "nvim-lua/plenary.nvim" },
-	 })
+--    use ({
+--	  "NTBBloodbath/rest.nvim",
+--	  requires = { "nvim-lua/plenary.nvim" },
+--	 })
 	 
     --Debuger nvim-dap
-    use 'mfussenegger/nvim-dap'
-    use 'Pocco81/DAPInstall.nvim'
-    use 'szw/vim-maximizer'
+--    use 'mfussenegger/nvim-dap'
+--    use 'Pocco81/DAPInstall.nvim'
+--    use 'szw/vim-maximizer'
     
     --Mini mapa
     --use 'wfxr/minimap.vim'

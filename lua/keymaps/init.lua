@@ -40,7 +40,7 @@ mapper(
     { expr = false }
 )
 --Cargar la extensión del telescopio de refactorización
-require("telescope").load_extension("refactoring")
+--require("telescope").load_extension("refactoring")
 
 --Reasignar para abrir el menú de refactorización del Telescope en modo visual
 mapper(
