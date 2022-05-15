@@ -23,7 +23,7 @@ return require('packer').startup(function()
 
     -- la linea de abajo Staline
     use 'tamton-aquib/staline.nvim'
-
+    
     -- la sintaxis
     use {'nvim-treesitter/nvim-treesitter', run = ":TSUpdate"}
 
@@ -46,17 +46,32 @@ return require('packer').startup(function()
     }
     
     -- LSP y autocompletado
-    require("nvim-lsp-installer").setup {}
-    require'lspconfig'.pyright.setup {}
-    use 'hrsh7th/cmp-nvim-lsp'
-    use 'hrsh7th/cmp-buffer'
-    use 'hrsh7th/nvim-cmp'
-    use 'hrsh7th/cmp-vsnip'
-    use 'hrsh7th/vim-vsnip'
-    use 'williamboman/nvim-lsp-installer'
-    use 'neovim/nvim-lspconfig'
-    use {'tami5/lspsaga.nvim'}
-    use "jose-elias-alvarez/null-ls.nvim"
+    --require("nvim-lsp-installer").setup {}
+    --require'lspconfig'.pyright.setup {}   
+    -- Soporte LSP
+    use {
+     'tami5/lspsaga.nvim',
+    requires = {
+
+    {'neovim/nvim-lspconfig'},
+    {'williamboman/nvim-lsp-installer'},
+
+    -- Autocompletado
+    {'hrsh7th/nvim-cmp'},
+    {'hrsh7th/cmp-buffer'},
+    {'hrsh7th/cmp-path'},
+    {'hrsh7th/cmp-vsnip'},
+    {'hrsh7th/vim-vsnip'},
+    {'saadparwaiz1/cmp_luasnip'},
+    {'hrsh7th/cmp-nvim-lsp'},
+    {'hrsh7th/cmp-nvim-lua'},
+    {'jose-elias-alvarez/null-ls.nvim'},
+
+    -- Snippets
+    {'L3MON4D3/LuaSnip'},
+    {'rafamadriz/friendly-snippets'},
+  }
+}
 
     -- para Hob
     use {
@@ -158,7 +173,10 @@ return require('packer').startup(function()
     use 'Pocco81/DAPInstall.nvim'
     use 'szw/vim-maximizer'
     
-    --Minimap
+    --Mini mapa
+    --use 'wfxr/minimap.vim'
+    
+    --Maper
 --    use {
 --        "thugcee/nvim-map-to-lua",
 --        ft = "lua",

@@ -46,7 +46,8 @@ require('tree-config')-- navegador de paquetes
 --require('trouble-config')-- errores generales
 
 -- dan errores
---require("nvim-mapper")
+--require("nvim-mapper")-- In-place converter of Vim's :map commands family to Neovim's Lua function vim.api.nvim_set_keymap 
+                        --or other custom mapping handling functions.
 --require('project-nvim')
 --require("project_nvim.config")
 --require("project_nvim.utils.history")

@@ -72,6 +72,7 @@ Plugins que contiene
  • vim-maximizer
  • vim-vsnip
  • which-key.nvim
+ • minimap
  
      Temas
  • catppuccin
