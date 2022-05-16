@@ -45,7 +45,7 @@ require('transparent-config')-- transparente
 --require('refactoring-nvim')-- refactoriza o cambia de nombre de una variable o x cosa en todos tus archivos
 --require('rest-nvim')-- para postman 
 --require('nvim-dap')-- debuger
---require('trouble-config')-- errores generales
+--require('trouble-config')-- errores generales, no la agrege por que se supone que lsp ya hace esa funcion, pero el que lo requiera ahi esta
 
 -- dan errores
 --require("nvim-mapper")-- In-place converter of Vim's :map commands family to Neovim's Lua function vim.api.nvim_set_keymap 
