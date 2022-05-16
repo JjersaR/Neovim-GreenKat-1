@@ -165,6 +165,16 @@ return require('packer').startup(function()
     -- transparente
     use 'xiyaowong/nvim-transparent'
     
+    -- conexion a bases de datos
+    --use({
+    --   "kristijanhusak/vim-dadbod-ui",
+    --        requires = {
+    --		"tpope/vim-dadbod",
+    --		"kristijanhusak/vim-dadbod-completion",
+    --	"tpope/vim-dotenv",
+    --		},
+    --	})
+    
     --rest-nvim
 --    use ({
 --	  "NTBBloodbath/rest.nvim",

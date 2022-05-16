@@ -73,6 +73,10 @@ Plugins que contiene
  • vim-vsnip
  • which-key.nvim
  • minimap
+ • vim-dadbod
+ • vim-dadbod-completion
+ • vim-dadbod-ui
+ • vim-dotenv
  
      Temas
  • catppuccin
