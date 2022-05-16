@@ -5,9 +5,9 @@ pcall(require,"impatient")
 if require "first_load"() then
   return
 end
--- para que cargue packer de forma interna y no externa debes de ir a la carpeta de lua en terminal, agarrar lua 
--- y soltarla en terminal la que esta dentro de nvim y luego correr en terminal el siguite comando
--- wget https://raw.githubusercontent.com/JjersaR/nvim/main/lua/first_load.lua
+-- para que cargue packer de forma interna y no externa debes de ir a la carpeta de tu nvim, agarrar  que se supone 
+-- es la que descargaste de mi configuracionlua y soltarla en terminal la que esta dentro de nvim y luego correr en terminal el siguite comando
+-- wget https://raw.githubusercontent.com/CaoaDev/Neovim-GreenKat/main/lua/first_load.lua
 
 -- los plugins
 require('plugins')
