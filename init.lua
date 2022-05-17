@@ -50,7 +50,7 @@ require('transparent-config')-- transparente
 -- dan errores
 --require("nvim-mapper")-- In-place converter of Vim's :map commands family to Neovim's Lua function vim.api.nvim_set_keymap 
                         --or other custom mapping handling functions.
---require('project-nvim')
+--require('project.lua')-- Creo es la version que no soporta la mas nueva.
 
 --Temas--
 --nightfox

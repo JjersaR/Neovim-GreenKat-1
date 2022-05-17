@@ -202,7 +202,7 @@ return require('packer').startup(function()
 --    }
 
 
-    -- project.nvim
+    -- --project.nvim
     --     local M = {}
 
     -- ---@class ProjectOptions
