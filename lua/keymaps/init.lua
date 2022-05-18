@@ -40,7 +40,7 @@ mapper(
     { expr = false }
 )
 --Cargar la extensión del telescopio de refactorización
---require("telescope").load_extension("refactoring")
+--require("telescope").load_extension("refactoring") 
 
 --Reasignar para abrir el menú de refactorización del Telescope en modo visual
 mapper(
@@ -114,8 +114,8 @@ mapper('n', '<leader>c', "<cmd>lua require('spectre').open()<CR>")
 --Buscar en el archivo actual
 mapper('n', '<leader>ca', "<cmd>lua require('spectre').open_file_search()<CR>")
 --Buscar palabra actual
---mapper('n', '<leader>cp', "<cmd>lua require('spectre').open_visual({select_word=true})<CR>")
---mapper('v', '<leader>cw', "<cmd>lua require('spectre').open_visual()<CR>")
+mapper('n', '<leader>cp', "<cmd>lua require('spectre').open_visual({select_word=true})<CR>")
+mapper('v', '<leader>cw', "<cmd>lua require('spectre').open_visual()<CR>")
 
 -- gitsigns.nvim Decoraciones git súper rápidas implementadas puramente en lua/teal.
 -- Actions
