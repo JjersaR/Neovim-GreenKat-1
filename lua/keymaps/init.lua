@@ -92,8 +92,8 @@ mapper('v','<', '<gv')
 mapper('v','>', '>gv')
 
 --Para moverse en lspsaga
-map("n", "<C-u>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<cr>", {noremap = true, silent = true})
-map("n", "<C-d>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<cr>", {noremap = true, silent = true})
+map("n", "<C-U>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<cr>", {noremap = true, silent = true})
+map("n", "<C-D>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<cr>", {noremap = true, silent = true})
 
 -- Para reach
 mapper("n", "ro", ":ReachOpen buffers<CR>")

@@ -18,6 +18,16 @@ require'lspconfig'.cssls.setup {
   capabilities = capabilities,
 }
 
+--tailwindcss
+require'lspconfig'.tailwindcss.setup{
+  capabilities = capabilities,
+}
+
+--cssmodules_ls
+require'lspconfig'.cssmodules_ls.setup{
+  capabilities = capabilities,
+}
+
 -- emmet html y css
 require'lspconfig'.emmet_ls.setup{
   capabilities = capabilities,

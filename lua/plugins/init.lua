@@ -3,6 +3,15 @@ return require('packer').startup(function()
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
     
+    use 'tpope/vim-fugitive' -- Git commands in nvim
+    use 'tpope/vim-rhubarb' -- Fugitive-companion to interact with github
+    use 'numToStr/Comment.nvim' -- "gc" to comment visual regions/lines
+    use 'ludovicchabant/vim-gutentags' -- Automatic tags management
+
+    -- Add indentation guides even on blank lines
+    use 'lukas-reineke/indent-blankline.nvim'
+
+    
     -- para ka carga rapida impatient
     use 'lewis6991/impatient.nvim'
     
@@ -26,6 +35,8 @@ return require('packer').startup(function()
     
     -- la sintaxis
     use {'nvim-treesitter/nvim-treesitter', run = ":TSUpdate"}
+    -- Additional textobjects for treesitter
+    use 'nvim-treesitter/nvim-treesitter-textobjects'
 
     -- los buffers
     use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
@@ -44,6 +55,7 @@ return require('packer').startup(function()
       'nvim-telescope/telescope.nvim',
       requires = { {'nvim-lua/plenary.nvim'} }
     }
+    use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
     
     -- LSP y autocompletado
     --require("nvim-lsp-installer").setup {}
@@ -122,9 +134,6 @@ return require('packer').startup(function()
 
     -- terminal
     use {"akinsho/toggleterm.nvim"}
-
-    -- indentado
-    use "lukas-reineke/indent-blankline.nvim"
 
     -- gitsigns-nvim
     use {
