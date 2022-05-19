@@ -10,92 +10,114 @@ local feedkey = function(key, mode)
 end
 
 -- Setup nvim-cmp.
-local cmp = require'cmp'
-local lspkind = require('lspkind')
+local cmp = require('cmp')
 
-cmp.setup({
+vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
+
+local cmp_select_opts = {behavior = cmp.SelectBehavior.Select}
+
+local cmp_config = {
+  completion = {
+    completeopt = 'menu,menuone,noinsert'
+  },
   snippet = {
-    -- REQUIRED - you must specify a snippet engine
     expand = function(args)
-      vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-      -- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
-      -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
-      -- require'snippy'.expand_snippet(args.body) -- For `snippy` users.
+      luasnip.lsp_expand(args.body)
+    end,
+  }, 
+  sources = {
+    {name = 'path'},
+    {name = 'nvim_lsp', keyword_length = 3},
+    {name = 'buffer', keyword_length = 3},
+    {name = 'luasnip', keyword_length = 2},
+  },
+  window = {
+    documentation = vim.tbl_deep_extend(
+      'force',
+      cmp.config.window.bordered(),
+      {
+        max_height = 15,
+        max_width = 60,
+      }
+    )
+  },
+  formatting = {
+    fields = {'abbr', 'menu', 'kind'},
+    format = function(entry, item)
+      local short_name = {
+        nvim_lsp = 'LSP',
+        nvim_lua = 'nvim'
+      }
+
+      local menu_name = short_name[entry.source.name] or entry.source.name
+
+      item.menu = string.format('[%s]', menu_name)
+      return item
     end,
   },
   mapping = {
-    ['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
-    ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
-    ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
-    ['<C-y>'] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
-    ['<C-e>'] = cmp.mapping({
-      i = cmp.mapping.abort(),
-      c = cmp.mapping.close(),
-    }),
-    ['<CR>'] = cmp.mapping.confirm({ select = true }),
+    -- confirm selection
+    ['<CR>'] = cmp.mapping.confirm({select = true}),
 
-        ["<Tab>"] = cmp.mapping(function(fallback)
+    -- navigate items on the list
+    ['<Up>'] = cmp.mapping.select_prev_item(cmp_select_opts),
+    ['<Down>'] = cmp.mapping.select_next_item(cmp_select_opts),
+
+    -- scroll up and down in the completion documentation
+    ['<C-f>'] = cmp.mapping.scroll_docs(5),
+    ['<C-u>'] = cmp.mapping.scroll_docs(-5),
+
+    -- toggle completion
+    ['<C-e>'] = cmp.mapping(function(fallback)
       if cmp.visible() then
-        cmp.select_next_item()
-      elseif vim.fn["vsnip#available"](1) == 1 then
-        feedkey("<Plug>(vsnip-expand-or-jump)", "")
-      elseif has_words_before() then
-        cmp.complete()
+        cmp.close()
+        fallback()
       else
-        fallback() -- The fallback function sends a already mapped key. In this case, it's probably `<Tab>`.
+        cmp.complete()
       end
-    end, { "i", "s" }),
+    end),
 
-    ["<S-Tab>"] = cmp.mapping(function()
+    -- go to next placeholder in the snippet
+    ['<C-d>'] = cmp.mapping(function(fallback)
+      if luasnip.jumpable(1) then
+        luasnip.jump(1)
+      else
+        fallback()
+      end
+    end, {'i', 's'}),
+
+    -- go to previous placeholder in the snippet
+    ['<C-b>'] = cmp.mapping(function(fallback)
+      if luasnip.jumpable(-1) then
+        luasnip.jump(-1)
+      else
+        fallback()
+      end
+    end, {'i', 's'}),
+
+    -- when menu is visible, navigate to next item
+    -- when line is empty, insert a tab character
+    -- else, activate completion
+    ['<Tab>'] = cmp.mapping(function(fallback)
       if cmp.visible() then
-        cmp.select_prev_item()
-      elseif vim.fn["vsnip#jumpable"](-1) == 1 then
-        feedkey("<Plug>(vsnip-jump-prev)", "")
+        cmp.select_next_item(cmp_select_opts)
+      elseif util.check_back_space() then
+        fallback()
+      else
+        cmp.complete()
       end
-    end, { "i", "s" }),
-  },
-  sources = cmp.config.sources({
-    { name = 'nvim_lsp' },
-    { name = 'vsnip' }, -- For vsnip users.
-    -- { name = 'luasnip' }, -- For luasnip users.
-    -- { name = 'ultisnips' }, -- For ultisnips users.
-    -- { name = 'snippy' }, -- For snippy users.
-  }, {
-    { name = 'buffer' },
-  }),
-  formatting = {
-    format = lspkind.cmp_format({
-      with_text = false, -- do not show text alongside icons
-      maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
-      
-      -- The function below will be called before any actual modifications from lspkind
-      -- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
-      before = function (entry, vim_item)
+    end, {'i', 's'}),
 
-        return vim_item
+    -- when menu is visible, navigate to previous item on list
+    -- else, revert to default behavior
+    ['<S-Tab>'] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_prev_item(cmp_select_opts)
+      else
+        fallback()
       end
-    })
+    end, {'i', 's'}),
   }
-})
+}
 
--- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
-cmp.setup.cmdline('/', {
-  sources = {
-    { name = 'buffer' }
-  }
-})
-
--- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
-cmp.setup.cmdline(':', {
-  sources = cmp.config.sources({
-    { name = 'path' }
-  }, {
-    { name = 'cmdline' }
-  })
-})
-
-local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
-for type, icon in pairs(signs) do
-  local hl = "DiagnosticSign" .. type
-  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
-end
+cmp.setup(cmp_config)

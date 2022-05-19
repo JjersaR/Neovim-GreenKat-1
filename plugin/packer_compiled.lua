@@ -336,10 +336,10 @@ _G.packer_plugins = {
     path = "/home/maggie/.local/share/nvim/site/pack/packer/start/vim-rhubarb",
     url = "https://github.com/tpope/vim-rhubarb"
   },
-  ["vim-vsnip"] = {
+  ["vscode-go"] = {
     loaded = true,
-    path = "/home/maggie/.local/share/nvim/site/pack/packer/start/vim-vsnip",
-    url = "https://github.com/hrsh7th/vim-vsnip"
+    path = "/home/maggie/.local/share/nvim/site/pack/packer/start/vscode-go",
+    url = "https://github.com/golang/vscode-go"
   },
   ["which-key.nvim"] = {
     loaded = true,
