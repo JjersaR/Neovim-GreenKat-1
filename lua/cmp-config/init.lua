@@ -1,16 +1,21 @@
-vim.g.completeopt = "menu,menuone,noselect, noinsert"
+---
+-- Snippet engine setup
+---
 
-local has_words_before = function()
-  local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-  return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
-end
+local luasnip = require('luasnip')
 
-local feedkey = function(key, mode)
-  vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(key, true, true, true), mode, true)
-end
+luasnip.config.set_config({
+  region_check_events = 'InsertEnter',
+  delete_check_events = 'InsertLeave'
+})
 
--- Setup nvim-cmp.
-local cmp = require'cmp'
+require('luasnip.loaders.from_vscode').lazy_load()
+
+---
+-- Autocompletion
+---
+
+local cmp = require('cmp')
 local lspkind = require('lspkind')
 local luasnip = require('luasnip')
 
