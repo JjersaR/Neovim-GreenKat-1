@@ -55,9 +55,6 @@ return require('packer').startup(function()
     }
     use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
     
-    --Friendly Snippets
-    use "rafamadriz/friendly-snippets"
-    
     -- LSP y autocompletado
     --require("nvim-lsp-installer").setup {}
     --require'lspconfig'.pyright.setup {}   

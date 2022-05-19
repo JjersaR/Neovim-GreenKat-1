@@ -9,6 +9,15 @@ local feedkey = function(key, mode)
   vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(key, true, true, true), mode, true)
 end
 
+local luasnip = require('luasnip')
+
+luasnip.config.set_config({
+  region_check_events = 'InsertEnter',
+  delete_check_events = 'InsertLeave'
+})
+
+require('luasnip.loaders.from_vscode').lazy_load()
+
 -- Setup nvim-cmp.
 local cmp = require'cmp'
 local lspkind = require('lspkind')
