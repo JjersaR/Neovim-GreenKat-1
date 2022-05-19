@@ -55,6 +55,9 @@ return require('packer').startup(function()
     }
     use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
     
+    --Friendly Snippets
+    use "rafamadriz/friendly-snippets"
+    
     -- LSP y autocompletado
     --require("nvim-lsp-installer").setup {}
     --require'lspconfig'.pyright.setup {}   
@@ -70,9 +73,9 @@ return require('packer').startup(function()
     {'hrsh7th/nvim-cmp'},
     {'hrsh7th/cmp-buffer'},
     {'hrsh7th/cmp-path'},
-    {'hrsh7th/cmp-vsnip'},
-    {'hrsh7th/vim-vsnip'},
-    {'hrsh7th/vim-vsnip-integ'},
+    --{'hrsh7th/cmp-vsnip'},
+    --{'hrsh7th/vim-vsnip'},
+    --{'hrsh7th/vim-vsnip-integ'},
     {'golang/vscode-go'},
     {'saadparwaiz1/cmp_luasnip'},
     {'hrsh7th/cmp-nvim-lsp'},

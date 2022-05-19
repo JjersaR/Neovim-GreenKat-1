@@ -119,11 +119,6 @@ _G.packer_plugins = {
     path = "/home/maggie/.local/share/nvim/site/pack/packer/start/cmp-path",
     url = "https://github.com/hrsh7th/cmp-path"
   },
-  ["cmp-vsnip"] = {
-    loaded = true,
-    path = "/home/maggie/.local/share/nvim/site/pack/packer/start/cmp-vsnip",
-    url = "https://github.com/hrsh7th/cmp-vsnip"
-  },
   cmp_luasnip = {
     loaded = true,
     path = "/home/maggie/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
@@ -330,16 +325,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/maggie/.local/share/nvim/site/pack/packer/start/vim-rhubarb",
     url = "https://github.com/tpope/vim-rhubarb"
-  },
-  ["vim-vsnip"] = {
-    loaded = true,
-    path = "/home/maggie/.local/share/nvim/site/pack/packer/start/vim-vsnip",
-    url = "https://github.com/hrsh7th/vim-vsnip"
-  },
-  ["vim-vsnip-integ"] = {
-    loaded = true,
-    path = "/home/maggie/.local/share/nvim/site/pack/packer/start/vim-vsnip-integ",
-    url = "https://github.com/hrsh7th/vim-vsnip-integ"
   },
   ["vscode-go"] = {
     loaded = true,
